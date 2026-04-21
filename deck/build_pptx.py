@@ -151,31 +151,129 @@ def add_cosmic_accents(slide):
     glow2.line.fill.background()
 
 
-def add_logo_lockup(slide, x, y, *, large=False):
-    w = Inches(2.4 if large else 1.8)
-    h = Inches(0.7 if large else 0.55)
-    add_rect(slide, x, y, w, h, fill=NAVY_700, line=VIOLET_L, line_w=Pt(0.75),
-             shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    add_text(slide, x, y + Emu(25400), w, h / 2, "ACCUTITE",
-             size=14 if large else 11, bold=True, color=WHITE,
-             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, tracking=400)
-    add_text(slide, x, y + h / 2, w, h / 2, "FASTENERS INC.",
-             size=8 if large else 7, bold=True, color=INK_300,
-             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, tracking=500)
+def _set_gradient_fill(shape, color1, color2, angle=0):
+    """Apply a two-stop gradient fill, inserted in the correct OOXML order."""
+    spPr = shape.fill._xPr
+    # drop any existing fill-type elements
+    for tag in ("a:noFill", "a:solidFill", "a:gradFill", "a:blipFill",
+                "a:pattFill", "a:grpFill"):
+        for el in spPr.findall(qn(tag)):
+            spPr.remove(el)
+
+    grad = etree.Element(qn("a:gradFill"))
+    grad.set("flip", "none")
+    grad.set("rotWithShape", "1")
+    stops = etree.SubElement(grad, qn("a:gsLst"))
+    for pos, col in ((0, color1), (100000, color2)):
+        gs = etree.SubElement(stops, qn("a:gs"))
+        gs.set("pos", str(pos))
+        srgb = etree.SubElement(gs, qn("a:srgbClr"))
+        srgb.set("val", f"{col[0]:02X}{col[1]:02X}{col[2]:02X}")
+    lin = etree.SubElement(grad, qn("a:lin"))
+    lin.set("ang", str(angle * 60000))
+    lin.set("scaled", "0")
+
+    # Fill must come after prstGeom/custGeom/xfrm and before a:ln/effectLst
+    anchor = None
+    for tag in ("a:ln", "a:effectLst", "a:effectDag", "a:scene3d", "a:sp3d",
+                "a:extLst"):
+        found = spPr.find(qn(tag))
+        if found is not None:
+            anchor = found
+            break
+    if anchor is not None:
+        anchor.addprevious(grad)
+    else:
+        spPr.append(grad)
 
 
-def add_portrait_placeholder(slide, x, y, w, h, label):
-    add_rect(slide, x, y, w, h, fill=NAVY_700, line=VIOLET_L, line_w=Pt(1.25),
-             shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    # inner dashed frame
-    inner = add_rect(slide, x + Inches(0.2), y + Inches(0.2),
-                     w - Inches(0.4), h - Inches(0.4),
-                     fill=None, line=VIOLET_L, line_w=Pt(0.5),
-                     shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    _dash_line(inner)
-    add_text(slide, x, y + h / 2 - Inches(0.2), w, Inches(0.4),
-             label, size=10, bold=True, color=INK_300, tracking=300,
+def draw_accutite_logo(slide, cx, cy, *, width=Inches(2.4), text_color=WHITE):
+    """Draw a stylized Accutite lockup: violet→cyan arc swoop over wordmark."""
+    mark_w = width * 0.55
+    mark_h = mark_w * 0.5
+    mx = cx - mark_w / 2
+    my = cy
+
+    # arc mark: use a block-arc (donut segment) rotated so it reads as a swoop
+    arc = slide.shapes.add_shape(MSO_SHAPE.BLOCK_ARC, mx, my, mark_w, mark_h)
+    arc.shadow.inherit = False
+    arc.line.fill.background()
+    _set_gradient_fill(arc, (0x38, 0xE0, 0xFF), (0x7C, 0x4D, 0xFF), angle=0)
+    # BLOCK_ARC default adjustments open downward; leave defaults which produce upper arc
+
+    # small diamond accent to the right of the arc
+    d = mark_h * 0.22
+    add_rect(slide, mx + mark_w * 0.95, my + mark_h * 0.15, d, d,
+             fill=CYAN, shape=MSO_SHAPE.DIAMOND)
+
+    # wordmark
+    tw = width
+    tx = cx - tw / 2
+    ty = my + mark_h + Inches(0.05)
+    add_text(slide, tx, ty, tw, Inches(0.34), "ACCUTITE",
+             size=18, bold=True, color=text_color, tracking=450,
              align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(slide, tx, ty + Inches(0.34), tw, Inches(0.22), "FASTENERS INC.",
+             size=9, bold=True, color=INK_300, tracking=600,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+
+def add_logo_lockup(slide, x, y, *, large=False):
+    """Compact Accutite lockup for headers/footers."""
+    w = Inches(2.4 if large else 1.8)
+    h = Inches(0.9 if large else 0.72)
+    draw_accutite_logo(slide, x + w / 2, y + Inches(0.05), width=w)
+
+
+def draw_portrait_card(slide, x, y, w, h, *, initials, name, title, caption=None):
+    """A polished portrait-substitute card: gradient wash, monogram, name/title."""
+    # outer frame
+    card = add_rect(slide, x, y, w, h, fill=NAVY_700, line=VIOLET_L, line_w=Pt(1.25),
+                    shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    _set_gradient_fill(card, (0x0C, 0x12, 0x30), (0x04, 0x06, 0x0F), angle=135)
+
+    # ambient glow discs
+    g1 = add_rect(slide, x - Inches(0.5), y - Inches(0.5), w * 0.9, w * 0.9,
+                  fill=VIOLET, shape=MSO_SHAPE.OVAL)
+    g1.fill.transparency = 0.75
+    g1.line.fill.background()
+    g2 = add_rect(slide, x + w * 0.4, y + h * 0.55, w * 0.8, w * 0.8,
+                  fill=CYAN, shape=MSO_SHAPE.OVAL)
+    g2.fill.transparency = 0.85
+    g2.line.fill.background()
+
+    # monogram tile centered
+    m_w = w * 0.55
+    m_h = m_w
+    mx = x + (w - m_w) / 2
+    my = y + h * 0.18
+    mono = add_rect(slide, mx, my, m_w, m_h, fill=NAVY_800, line=VIOLET_L, line_w=Pt(1.5),
+                    shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    _set_gradient_fill(mono, (0x12, 0x1A, 0x44), (0x04, 0x06, 0x0F), angle=135)
+    # monogram text
+    add_text(slide, mx, my, m_w, m_h, initials,
+             size=96, bold=True, color=WHITE,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, tracking=100)
+
+    # cyan accent bar under monogram
+    bar_w = w * 0.25
+    add_rect(slide, x + (w - bar_w) / 2, my + m_h + Inches(0.2),
+             bar_w, Emu(38100), fill=CYAN)
+
+    # name + title
+    tx = x + Inches(0.3)
+    tw = w - Inches(0.6)
+    ny = my + m_h + Inches(0.4)
+    add_text(slide, tx, ny, tw, Inches(0.4), name,
+             size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER,
+             anchor=MSO_ANCHOR.MIDDLE)
+    add_text(slide, tx, ny + Inches(0.4), tw, Inches(0.35), title,
+             size=9, bold=True, color=CYAN_L, tracking=400,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    if caption:
+        add_text(slide, tx, ny + Inches(0.8), tw, Inches(0.3), caption,
+                 size=8, color=INK_300, tracking=300,
+                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, italic=True)
 
 
 def _dash_line(shape):
@@ -223,11 +321,13 @@ def slide_title(prs):
     add_text(slide, Inches(0.7), Inches(4.25), Inches(6), Inches(0.4),
              "MATERIAL CONTROL MANAGER", size=11, bold=True, color=INK_300, tracking=400)
 
-    # portrait placeholder (hero)
-    add_portrait_placeholder(slide, Inches(9.0), Inches(1.3), Inches(3.6), Inches(5.2),
-                             "HERO PORTRAIT")
+    # presenter card
+    draw_portrait_card(slide, Inches(9.0), Inches(1.1), Inches(3.6), Inches(5.2),
+                       initials="LH", name="LEVEE HEDRICK",
+                       title="MATERIAL CONTROL MANAGER",
+                       caption="Accutite Fasteners, Inc.")
 
-    add_logo_lockup(slide, Inches(10.7), Inches(6.6), large=True)
+    draw_accutite_logo(slide, Inches(2.0), Inches(6.55), width=Inches(2.4))
 
 
 def content_slide(prs, idx, kicker, title, bullets):
@@ -394,8 +494,10 @@ def divider_slide(prs, idx):
     add_rect(slide, Inches(7), Inches(3), Inches(8), Inches(7), fill=CYAN,
              shape=MSO_SHAPE.OVAL).fill.transparency = 0.88
 
-    add_portrait_placeholder(slide, Inches(0.7), Inches(1.0), Inches(4.2), Inches(5.5),
-                             "SIDE PROFILE / FULL BODY")
+    draw_portrait_card(slide, Inches(0.7), Inches(1.0), Inches(4.2), Inches(5.5),
+                       initials="LH", name="LEVEE HEDRICK",
+                       title="MATERIAL CONTROL MANAGER",
+                       caption="Leading Purchasing & Quality AI rollout")
 
     add_kicker(slide, Inches(5.4), Inches(2.5), "PART TWO")
     add_text(slide, Inches(5.4), Inches(3.05), Inches(7.5), Inches(1.2),
@@ -488,8 +590,10 @@ def beforeafter_slide(prs, idx):
 def closing_slide(prs, idx):
     slide = base_slide(prs)
 
-    add_portrait_placeholder(slide, Inches(0.7), Inches(1.0), Inches(4.2), Inches(5.5),
-                             "CLOSING PORTRAIT")
+    draw_portrait_card(slide, Inches(0.7), Inches(1.0), Inches(4.2), Inches(5.5),
+                       initials="LH", name="LEVEE HEDRICK",
+                       title="MATERIAL CONTROL MANAGER",
+                       caption="Accutite Fasteners, Inc.")
 
     add_kicker(slide, Inches(5.4), Inches(1.15), "CALL TO ACTION")
     add_text(slide, Inches(5.4), Inches(1.7), Inches(7.5), Inches(1.3),
