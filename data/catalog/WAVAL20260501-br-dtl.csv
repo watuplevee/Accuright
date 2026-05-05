@@ -1,0 +1,118 @@
+Consolidated Item List,,,,,,,,Commodity Type,Item Count,Item Type,Item Count
+Grouped by Item from WAVAL20260501-br-dtl,,,,,,,,Fasteners,"4,568",Screw,"2,776"
+,,,,,,,,Hardware & Fittings,979,Hardware Component,844
+Source Rows,6571,Unique Items,"6,270",,,,,Electrical & Wiring,273,Washer,638
+Duplicate Rows Consolidated,301,Total Quantity OH,"84,666,287",,,,,Springs & Clips,141,Bolt,544
+,,Total Quantity On PO,"85,524,937",,,,,Raw Materials & Metals,105,Nut,401
+Refresh Note,Formulas update if source quantities/items change,,,,,,,Tools & Tooling,97,Raw Material,105
+Item,Description,Vendor,Product Line,Quantity OH,Quantity On PO,Commodity Type,Item Type,Miscellaneous/MRO,65,Electrical Component,101
+141,1/2 INCH CONDUIT LOCKNUT STEEL,OCW,704-RB,"19,900","200,000",Electrical & Wiring,Electrical Component,Packaging & Labeling,26,Clip / Pin / Ring,79
+612,612 KEYSTONE **ROHS,FE,700,"1,700",0,Hardware & Fittings,Hardware Component,Adhesives/Tape/Sealants,10,Wire / Cable,79
+1064,HEYCO 1064,HEY,700,3,0,Electrical & Wiring,Electrical Component,Abrasives & Cutting,6,Spring,62
+1065,HEYCO 1065,HEY,700,3,0,Electrical & Wiring,Electrical Component,,,Insert,59
+1170,HEYCO #1170 STRAIN RELIEF .562,CC,700,650,0,Electrical & Wiring,Strain Relief,,,Fitting / Valve,53
+1205,UNINSULATED TERMINAL RING .220,NICHIF,700,4,0,Electrical & Wiring,Lug / Terminal,,,Spacer / Standoff,53
+1208,1208 HEYCO WHITE STRAIN RELIEF,HWE,700,900,0,Electrical & Wiring,Strain Relief,,,Gauge / Measurement,52
+1214,HEYCO 1214 SR 6L-1,HEY,700,"5,254",0,Electrical & Wiring,Electrical Component,,,Rod / Stud,49
+1237,HEYCO 1237 STRAIN RELEIF BLACK,HEY,700,200,0,Electrical & Wiring,Strain Relief,,,Tooling,45
+1240,HEYCO 1240 STRAIN RELEIF BLACK,HEY,700,"1,000",0,Electrical & Wiring,Strain Relief,,,Seal / Gasket / O-Ring,43
+1497,HEYCO 1497 STRAIN RELIEF BLACK,HEY,700,"2,000",0,Electrical & Wiring,Strain Relief,,,Connector,41
+1587,COMPRESSION SPRING .030 DIA,NEWCOM,700,"2,920",0,Springs & Clips,Spring,,,Lug / Terminal,41
+1599,HEYCO #1599 PIG TAIL STRAIN,HWE,700,100,0,Electrical & Wiring,Electrical Component,,,Custom / Print Part,36
+1641,1641 GREASE FITTING 1/4-28,GLHUYE,700,"4,325",0,Hardware & Fittings,Fitting / Valve,,,Rivet,35
+1657,HEYCO 1657,HEY,700,1,0,Electrical & Wiring,Electrical Component,,,Safety / MRO,29
+1660,SHIORTY PLUG BLACK,HEY,700,"10,000",0,Electrical & Wiring,Electrical Component,,,Packaging,26
+1678,HEYCO 1678,CC,700,1,0,Electrical & Wiring,Electrical Component,,,Kit,25
+1859,HEYCO STRAIN RELEIF,HEY,700,"1,845",0,Electrical & Wiring,Strain Relief,,,Anchor,13
+1863,1863 ALUMINUM SOLDERLESS,HEY,700,"1,600",0,Electrical & Wiring,Lug / Terminal,,,Strain Relief,11
+2043,#2043 SNAP BUSHING SB437-5 BLK,HEY,700,"20,500",0,Electrical & Wiring,Electrical Component,,,Adhesive / Tape,10
+2053,"1/2"" SNAP BUSHING BLACK HEYCO",CC,700,500,"5,000",Electrical & Wiring,Electrical Component,,,Shim,7
+2066,2066 HEYCO ***ROHS COMPLIANT**,HEY,700,"2,000",0,Electrical & Wiring,Electrical Component,,,Abrasive / Cutting,6
+2096,HEYCO 2096 SNAP BUSHING BLACK,HWE,700,495,0,Electrical & Wiring,Electrical Component,,,Bearing,4
+2119,2119 HEYCO UNIVERSAL BUSHING,HEY,700,"1,120","10,000",Electrical & Wiring,Electrical Component,,,Bushing / Grommet,2
+2137,HEYCO 2137 BUSHING  UB-1.000,HWE,700,0,"2,500",Electrical & Wiring,Electrical Component,,,Brush,1
+2166,2166 HEYCO COLLAR 1 1/8 THK,FE,700,"1,730",0,Electrical & Wiring,Electrical Component,,,,
+2215,Digimatic Indicator,ACC-SP,100,2,0,Tools & Tooling,Gauge / Measurement,,,,
+2248,#8 RETAINING FLAT WASHER NYLON,VIP,700,"50,770",0,Fasteners,Washer,,,,
+2258,2258 HEYCO,HEY,700,900,0,Electrical & Wiring,Electrical Component,,,,
+2259,HEYCO 2259 NUT FOR CABLE GLAND,HEY,700,"1,000",0,Electrical & Wiring,Wire / Cable,,,,
+2280,SR155 #3(X) AF2 BG,PIBSI,700,30,0,Hardware & Fittings,Hardware Component,,,,
+2302,2302 HEYCO HOSE CLAMP NYLON,HEY,700,50,0,Electrical & Wiring,Electrical Component,,,,
+2314,HEYCO ITEM 2314 -MPI -,MPI,700,500,0,Electrical & Wiring,Electrical Component,,,,
+2355,# 8 ZIP IT NYLON WALL ANCHOR,PETERS,700,"3,000",0,Fasteners,Anchor,,,,
+2400,2400  HEYCO  PLASTIC BUSHING,FE,700,500,0,Electrical & Wiring,Electrical Component,,,,
+2411,HEYCO 2411 HOLE PLUG,HEY,700,400,0,Electrical & Wiring,Electrical Component,,,,
+2494,HEYCO 2494,HEY,700,"10,360",0,Electrical & Wiring,Electrical Component,,,,
+2518,5/16-18x.760 THIN HX 1/2 AF,SII,800,"12,200",0,Fasteners,Screw,,,,
+2552,5/16-18 X 1-1/8 TRIM SQUARE HD,TRIEM,800,"1,700",0,Fasteners,Bolt,,,,
+2603,"2603 HEYCO 1/4"" DOME PLUG",RCDUDE,700,0,"2,000",Electrical & Wiring,Electrical Component,,,,
+2604,"2604 HEYCO 1/4"" DOME PLUG",CC,700,"5,000",0,Electrical & Wiring,Electrical Component,,,,
+2613,2613 HEYCO BLACK HOLE PLUG,FE,700,1,0,Electrical & Wiring,Electrical Component,,,,
+2617,2617 HEYCO BLACK HOLE PLUG,CC,700,"3,000",0,Electrical & Wiring,Electrical Component,,,,
+2633,2633 HEYCO 7/16 HOLE PLUG,FE,700,"10,150",0,Electrical & Wiring,Electrical Component,,,,
+2703,HEYCO 2703 7/8 HOLE PLUG BLACK,HEY,700,"1,400",0,Electrical & Wiring,Electrical Component,,,,
+2723,DP-1375 DOME PLUG 1-3/8 PER,HWE,700,"1,200",0,Electrical & Wiring,Electrical Component,,,,
+2753,2753 - DP 1375 BLACK DOME PLUG,HEY,700,"2,257",0,Electrical & Wiring,Electrical Component,,,,
+2783,2783 HEYCO,CC,700,500,0,Electrical & Wiring,Electrical Component,,,,
+2850,2850 HEYCO  **ROHS COMPLIANT**,CC,700,250,0,Electrical & Wiring,Electrical Component,,,,
+2865,HEYCO 2865,HEY,700,"15,390",0,Electrical & Wiring,Electrical Component,,,,
+2871,HEYCO #2871 BUSHING,FE,700,507,0,Electrical & Wiring,Electrical Component,,,,
+3046,3046 HEYCO,HEY,700,"2,000",0,Electrical & Wiring,Electrical Component,,,,
+3207,HEYCO 3207 CABLE FITTING,HEYCO,700,"7,450",0,Electrical & Wiring,Wire / Cable,,,,
+3231,LIQUID TIGHT FITTING LTF 1/2,HEY,700,"3,700",0,Hardware & Fittings,Fitting / Valve,,,,
+3234,HEYCO 3234 LIQUID TIGHT,FE,700,3,0,Electrical & Wiring,Electrical Component,,,,
+3314,"1/4"" WHITE WIRE CLAMP",FE,700,770,0,Electrical & Wiring,Wire / Cable,,,,
+3348,3348 KEYSTONE FLAT WASHER,LEEJOH,700,"1,000",0,Fasteners,Washer,,,,
+3638,HEYCO 3638,HEY,700,250,"5,000",Electrical & Wiring,Electrical Component,,,,
+3847,3847 HEYCO PUSH MOUNT WIRE,HEY,700,250,0,Electrical & Wiring,Wire / Cable,,,,
+4313,PIC 4-40X5/32 SHOULDER SCREW,ALPHA,800,"5,000",0,Fasteners,Screw,,,,
+4327,4327 PIC 1/4 x 3/16 SLOT,ALPHA,700,"1,000",0,Fasteners,Screw,,,,
+4760,HEYCO 4760,HEY,700,"1,830",0,Electrical & Wiring,Electrical Component,,,,
+6607,DERMA LITE GLOVES MEDIUM,SASSAF,400,25,0,Miscellaneous/MRO,Safety / MRO,,,,
+6623,3/8 D/C 2 SCR NMC CONN 6623,OCW,700,500,0,Electrical & Wiring,Connector,,,,
+6624,3/4 D/C 2SCRW TOPAZ 952 ONLY,TOPAZ,704-BALB,"3,513","3,000",Hardware & Fittings,Hardware Component,,,,
+6625,"1"" NM & SE ROUND CABLE CLAMP",TOPAZ,700,"3,000",0,Electrical & Wiring,Wire / Cable,,,,
+8223,STANDOFF 4-40 X 1.125,WJRC,700,750,0,Fasteners,Spacer / Standoff,,,,
+8414,KEYSTONE 6-32 X 1/2 1/4 HEX MF,HI-Q,700,150,0,Fasteners,Bolt,,,,
+11403,1/4 HOOK AND EYE TURN BUCKLE,HMC,700,50,0,Hardware & Fittings,Fitting / Valve,,,,
+12178,HEYCO 12178,HEY,700,5,0,Electrical & Wiring,Electrical Component,,,,
+14225,7/16-20 X 9-16 SLOTTED SET,LUGS,700,20,0,Electrical & Wiring,Lug / Terminal,,,,
+28861,1/4 M BSPT X 1/4 FIP ADAPTER,MIDLAN,700,0,"2,484",Hardware & Fittings,Fitting / Valve,,,,
+33466,"RING TERMINAL NON-INSLTD,CRIMP",MOUSER,700,100,0,Electrical & Wiring,Lug / Terminal,,,,
+36260,ROUND SPACER .115 ID X .188 OD,ESSENTRA,700,"6,000",0,Fasteners,Spacer / Standoff,,,,
+38201,GROMMET RUBBER 2 HOLE PER,HULESQ,800,"1,650",0,Hardware & Fittings,Bushing / Grommet,,,,
+44167,1-3/8 SCRATCH BRUSH 7-1/2 X,AIRGAS,400,17,200,Hardware & Fittings,Brush,,,,
+50111,4-40X.226 BRASS THRDED INSERT,PENCOM,700,0,"9,850",Fasteners,Insert,,,,
+57130,3/16 ROUND PUSH NUT PER ABCOR,IF,700,"31,000",0,Fasteners,Nut,,,,
+65011,"CAM LOCK DISC TUMBLER 7/8""",EBERHARD,700,262,0,Hardware & Fittings,Hardware Component,,,,
+66518,LARGE RAVEN GLOVES 6 MIL,SASSAF,400,60,0,Miscellaneous/MRO,Safety / MRO,,,,
+66521,NITRILE POWDER FREE 4 MIL,SASSAF,400,4,0,Miscellaneous/MRO,Safety / MRO,,,,
+66523,NITRILE POWDER FREE 4 MIL,SASSAF,400,3,0,Miscellaneous/MRO,Safety / MRO,,,,
+78252,INS 51/6-32 / .150 EK,PPROD,700,800,0,Fasteners,Insert,,,,
+78253,8-32 BRASS INSERT,PPROD,700,"2,000",0,Fasteners,Insert,,,,
+81996,JC3/830/OMNI/IP65/LED,HAYWAR,700,180,0,Electrical & Wiring,Electrical Component,,,,
+82143,JC10/RGBW/LED,HAYWAR,700,0,60,Electrical & Wiring,Electrical Component,,,,
+91209,"5/16"" X 0.319 ID X 0.687 OD",QUALSE,700,"3,000",0,Fasteners,Screw,,,,
+100265,100265 BALL BEARING 3/32,SALEMS,700,"14,000",0,Hardware & Fittings,Bearing,,,,
+102124,1 1/2 WIRE CLAMP STEEL ZINC,HANGZHOU,901-HAYEND,"8,000","105,000",Electrical & Wiring,Wire / Cable,,,,
+104901,104901 SPECIAL SEMI-TUBULAR,VFG,800,"95,260",0,Fasteners,Rivet,,,,
+109588,109588 (A367-400),SWG,800,"23,798",0,Hardware & Fittings,Hardware Component,,,,
+120202,.281 HOLE X 1.26 LONG X-MAS B,KINTL,700,"1,000",0,Hardware & Fittings,Hardware Component,,,,
+152674,152674 BUMPER RUBBER 1/2 DIA,RLSEAL,700,871,0,Hardware & Fittings,Hardware Component,,,,
+170782,"3/4 X 12"" BLACK ONE WRAP CABLE",HANGZHOU,902-CHAN,"11,500","20,000",Electrical & Wiring,Wire / Cable,,,,
+202114,BNC MALE SHORTING CAP,FE,602,469,"1,000",Hardware & Fittings,Hardware Component,,,,
+301050,"4 1/2' X 7/8"" HOLE, AOX FIBRE",CHAMPI,400,250,0,Fasteners,Screw,,,,
+439210,"REDUCER BUSHING-1.5"" M X 3/4""",LASCO,700,0,300,Electrical & Wiring,Electrical Component,,,,
+830002,"PVC COUPLING 1/4"" NPT",LASCO,700,100,0,Hardware & Fittings,Fitting / Valve,,,,
+838210,"REDUCER BUSHING-1.5"" M X 3/4""",VNE,700,1,0,Electrical & Wiring,Electrical Component,,,,
+850002,"1/4"" NPT PVC PIPE PLUG",lasco,700,4,0,Electrical & Wiring,Electrical Component,,,,
+915030,PDO083-TZ-15 8.3 DOME,HAYWAR,700,60,0,Hardware & Fittings,Hardware Component,,,,
+915454,PTH055-AB-12 5.5,HAYWAR,700,10,0,Hardware & Fittings,Hardware Component,,,,
+938724,"15"" X 1500 'STRETCH FILM 90GA",CONTIN,400,25,0,Packaging & Labeling,Packaging,,,,
+995314,BSB062-TZ 6.2,HAYWAR,700,60,0,Hardware & Fittings,Hardware Component,,,,
+995407,FRF057-TB FLOOD REFLECTOR,HAYWAR,700,61,0,Hardware & Fittings,Hardware Component,,,,
+995502,BCB065-AB 6.5,HAYWAR,700,60,0,Hardware & Fittings,Hardware Component,,,,
+997015,TR15SS1-INT-150,HAYWAR,700,60,0,Hardware & Fittings,Hardware Component,,,,
+998140,DMT027-TB 2.7,HAYWAR,700,2,0,Hardware & Fittings,Hardware Component,,,,
+998141,DMT027-TZ 2.7,HAYWAR,700,92,28,Hardware & Fittings,Hardware Component,,,,
+998142,DMT027-AB 2.7 DECK MOUNT,HAYWAR,700,10,0,Hardware & Fittings,Hardware Component
